@@ -15,6 +15,7 @@ import ManageUser from "../pages/Dashboard/ManageUser";
 import ManageClasses from "../pages/Dashboard/ManageClasses";
 import AddAClasses from "../pages/Dashboard/AddAClasses";
 import MyClasses from "../pages/Dashboard/MyClasses";
+import FeedBack from "../pages/Dashboard/FeedBack";
 
 const router = createBrowserRouter([
     {
@@ -74,6 +75,10 @@ children:[
     {
         path:'myclass',
         element:<MyClasses></MyClasses>
+    },
+    {
+        path:'feedback',
+        element:<FeedBack></FeedBack>
     },
 ]
     }

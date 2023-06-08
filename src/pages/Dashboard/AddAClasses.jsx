@@ -24,7 +24,7 @@ if(imgres.success){
     const imgUrl = imgres.data.display_url
     console.log(imgUrl)
     const {className,instructorname,instructorEmail,seat,price} = data
-    const newClasse = {className,image:imgUrl,instructorname,instructorEmail,seat:parseFloat(seat),price:parseFloat(price)} 
+    const newClasse = {className,image:imgUrl,instructorname,instructorEmail,seat:parseFloat(seat),price:parseFloat(price),status:"pending"} 
     
     axiosSecure.post('/addclass',newClasse)
     .then(data=>{
