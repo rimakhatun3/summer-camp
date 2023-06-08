@@ -34,10 +34,8 @@ const MyClasses = () => {
             <td>
              {singleClass.status}
             </td>
-            <td>
-              Zemlak, Daniel and Leannon
-              <br/>
-              <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+            <td className='text-center'>
+             0
             </td>
             <td><button className="btn bg-green-500">FeedBack</button></td>
             <th>

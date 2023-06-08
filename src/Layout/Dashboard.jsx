@@ -3,6 +3,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Components/hooks/useAdmin';
 import useInstructor from '../Components/hooks/useinstructor';
 import { AuthContext } from '../Provider/AuthProvider';
+import { FaHome, FaIdCard, FaSchool } from 'react-icons/fa';
+
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
@@ -43,10 +45,13 @@ const Dashboard = () => {
         <li><NavLink to='/dashboard/mypayment'>My Payment</NavLink></li></>:''
       }
 
-      
+<div className="divider "></div> 
+<li><NavLink to='/'><FaHome></FaHome>Home</NavLink></li>
+<li><NavLink to='/instructor'><FaIdCard></FaIdCard>Instructor</NavLink></li>
+<li><NavLink to='/allclasses'><FaSchool></FaSchool> All Classes</NavLink></li>
       
     </ul>
-    <div className="divider "></div> 
+    
   </div>
 </div> 
         </div>
