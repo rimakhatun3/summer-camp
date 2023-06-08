@@ -1,11 +1,46 @@
 import React from 'react';
 import useClass from '../../Components/hooks/useClasse';
+import useAxiosSecure from '../../Components/hooks/UseAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 const AllClasses = () => {
     const [classes,refetch] = useClass()
+    const [axiosSecure] = useAxiosSecure()
 
     const filterClass = classes.filter(item=>item.status==="approve")
-    console.log(filterClass)
+  
+const handleSelectedClass =(selectedClass)=>{
+    console.log(selectedClass)
+    const {className,instructorname,instructorEmail} = selectedClass
+    const  selected = {instructorEmail,instructorname,className} 
+    console.log(selected)
+
+ fetch('http://localhost:5000/selectedclass',{
+    method:"POST",
+    headers:{
+        "content-type":"application/json"
+    },
+    body:JSON.stringify(selected)
+
+ })
+ .then(res=>res.json())
+ .then(data=>{
+    console.log(data)
+    if(data.insertedId){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'data added success',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    }
+ })
+ 
+  
+}
+
     return (
         <div>
             <div className="overflow-x-auto overflow-y-auto">
@@ -57,7 +92,7 @@ const AllClasses = () => {
             </td>
             
             <td>
-            <button  className="btn btn-primary ">Select</button>
+            <button onClick={()=>handleSelectedClass(user)}  className="btn btn-primary ">Select</button>
                 </td>
 
           </tr>)
