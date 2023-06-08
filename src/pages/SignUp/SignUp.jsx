@@ -40,7 +40,7 @@ updateUser(data.name,imageUrl)
         showConfirmButton: false,
         timer: 1500
       })
-      const saveUser = {name:data.name,email:data.email}
+      const saveUser = {name:data.name,email:data.email,role:"student"}
       fetch(`http://localhost:5000/allUser/${result.user.email}`,{
         method:'PUT',
         headers:{
@@ -95,11 +95,11 @@ updateUser(data.name,imageUrl)
             {/* <p className='text-black mb-2 ms-4'>Confirm password</p>
             <input type="password" placeholder="Your Password" {...register("confirm", { required: true  })} className="input input-bordered   w-full bg-slate-600"  /> */}
             <p className='mx-3 my-2 text-black'>
-                Already Have an Account Please<Link to='/login'><button className='btn btn-link'>Register Now</button></Link>
+                Already Have an Account Please<Link to='/login'><button className='btn btn-link'>Login Now</button></Link>
                 </p>
 
             <div className='text-center'>
-            <input className='bg-rose-500 py-2 px-10 rounded-2xl w-2/4' type="submit"  value='Register Now' />
+            <input className='bg-rose-500 btn py-2 px-10 rounded-2xl w-2/4' type="submit"  value='Register Now' />
             </div>
             <Social></Social>
            

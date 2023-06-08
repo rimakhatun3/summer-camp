@@ -17,7 +17,7 @@ const {data :users=[],refetch} =useQuery({
 
 const handleMakeAdmin = (user)=>{
   console.log(user)
-  fetch(`http://localhost:5000/alluser/instructor/${user._id}`,{
+  fetch(`http://localhost:5000/alluser/admin/${user._id}`,{
     method:'PATCH',
     
   })

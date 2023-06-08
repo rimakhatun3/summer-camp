@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import useAdmin from '../Components/hooks/useAdmin';
+import useInstructor from '../Components/hooks/useinstructor';
 
 const Dashboard = () => {
-    const isAdmin = true
-    const isInstructor = false
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
     return (
         <div>
            <div className="drawer lg:drawer-open">

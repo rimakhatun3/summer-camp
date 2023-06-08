@@ -18,7 +18,7 @@ const Login = () => {
       signIn(data.email,data.password)
       .then(result=>{
         console.log(result.user)
-        navigate(from,{replace:true})
+        
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -26,6 +26,7 @@ const Login = () => {
         showConfirmButton: false,
         timer: 1500
       })
+      navigate(from,{replace:true})
       const saveUser = {name:data.name,email:data.email}
       fetch(`http://localhost:5000/allUser/${result.user.email}`,{
         method:'PUT',
@@ -73,7 +74,7 @@ const Login = () => {
             </div>
 
             <div className='text-center'>
-            <input className='bg-rose-500 py-2 px-10 rounded-2xl w-2/4' type="submit"  value='Login Now' />
+            <input className='btn bg-rose-500 py-2 px-10 rounded-2xl w-2/4' type="submit"  value='Login Now' />
             </div>
             <Social></Social>
            
