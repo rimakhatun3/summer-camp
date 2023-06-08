@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../Components/hooks/useAdmin';
 import useInstructor from '../Components/hooks/useinstructor';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
+    
     return (
         <div>
            <div className="drawer lg:drawer-open">
@@ -20,6 +22,8 @@ const Dashboard = () => {
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 h-full bg-rose-300 text-base-content">
       {/* Sidebar content here */}
+
+     
       {
         isAdmin&&<><li><NavLink to='/dashboard/manageuser'>Manage AllUsers</NavLink></li>
         <li><NavLink to='/dashboard/manageclasses'>Manage Classes</NavLink></li></>
