@@ -42,7 +42,9 @@ const Dashboard = () => {
       {
         !isAdmin && !isInstructor ?<><li><NavLink to='/dashboard/myselectedclasses'>My selected Classes</NavLink></li>
         <li><NavLink to='/dashboard/myenrollclasses'>My Enroll Classes</NavLink></li>
-        <li><NavLink to='/dashboard/mypayment'>My Payment</NavLink></li></>:''
+        <li><NavLink to='/dashboard/mypayment'>My Payment</NavLink></li>
+        <li><NavLink to='/dashboard/paymenthistory'>Payment History</NavLink></li></>
+        :''
       }
 
 <div className="divider "></div> 

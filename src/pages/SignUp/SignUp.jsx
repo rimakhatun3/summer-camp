@@ -20,7 +20,8 @@ const SignUp = () => {
     fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imgbb_api}`,
     {
         method:'POST',
-        body:formData
+        body:formData,
+        
     })
     .then(res=>res.json())
     .then(imgdata=>{

@@ -4,13 +4,18 @@ import useAxiosSecure from '../../Components/hooks/UseAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import ClassCard from '../Dashboard/ClassCard';
+import useEnrolClass from '../../Components/useEnrollClasse';
 
 const AllClasses = () => {
     const [classes,refetch] = useClass()
     const [axiosSecure] = useAxiosSecure()
 
     const filterClass = classes.filter(item=>item.status==="approve")
-    console.log(filterClass)
+
+    
+    const [enrollClass] = useEnrolClass()
+   console.log(enrollClass)
+    
   
 const handleSelectedClass =(selectedClass)=>{
     console.log(selectedClass)
@@ -46,7 +51,7 @@ const handleSelectedClass =(selectedClass)=>{
     return (
         <div>
 {/* <h2 className=' font-bold text-2xl text-center'> All The Classes</h2> */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5 min-h-fit  '>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-5   '>
         {
             filterClass.map(singleClass=><ClassCard handleSelectedClass={handleSelectedClass} key={singleClass._id} singleClass={singleClass}></ClassCard>)
           }

@@ -20,13 +20,13 @@ const Header = () => {
     <li><Link to='/allclasses'>All Classes</Link></li>
     {user && <li><Link to='/dashboard'><button className="btn">
       Dashboard
-      <div className="badge badge-secondary">+0</div>
+      
     </button></Link></li>}
 
   </>
   return (
     <div>
-      <div className="navbar fixed z-10 max-w-screen-xl mx-0  text-white bg-rose-400">
+      <div className="navbar fixed z-10 max-w-screen-xl mx-0   text-white bg-rose-400">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

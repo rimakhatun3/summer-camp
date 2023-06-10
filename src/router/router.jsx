@@ -16,6 +16,7 @@ import ManageClasses from "../pages/Dashboard/ManageClasses";
 import AddAClasses from "../pages/Dashboard/AddAClasses";
 import MyClasses from "../pages/Dashboard/MyClasses";
 import FeedBack from "../pages/Dashboard/FeedBack";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory";
 
 const router = createBrowserRouter([
     {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
     },
     {
         path:'dashboard',
-element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+element:<Dashboard></Dashboard>,
 children:[
     {
         path:'myselectedclasses',
@@ -57,8 +58,9 @@ children:[
         element:<MyEnrollClasses></MyEnrollClasses>
     },
     {
-        path:'mypayment',
-        element:<Payment></Payment>
+        path:'mypayment/:id',
+        element:<Payment></Payment>,
+        loader:({params})=> fetch(`http://localhost:5000/allclasse/${params.id}`)
     },
     {
         path:'manageuser',
@@ -79,6 +81,10 @@ children:[
     {
         path:'feedback',
         element:<FeedBack></FeedBack>
+    },
+    {
+        path:'paymenthistory',
+        element:<PaymentHistory></PaymentHistory>
     },
 ]
     }

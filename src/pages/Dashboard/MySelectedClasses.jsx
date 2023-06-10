@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MySelectedClasses = () => {
-    const [classPrice,setClassPrice] = useState('')
+    
     const [axiosSecure] = useAxiosSecure()
     const {data:selectedClass=[],refetch} = useQuery({
-        queryKey:['allclasses'],
+        queryKey:['selectclass'],
         queryFn: async()=>{
     const res = await axiosSecure.get('/selectclass')
-    // console.log(res.data)
+    console.log(res.data)
     return res.data
         }
     })
@@ -77,7 +77,7 @@ const handleClassRemove =(id)=>{
                 <td>{item.instructorname}</td>
                 <td><button  onClick={()=>handleClassRemove(item._id)} className="btn bg-red-700">Remove</button></td>
                 <td>
-                    <Link  to='/dashboard/mypayment'><button className="btn bg-green-400">Payment</button></Link>
+                    <Link  to={`/dashboard/mypayment/${item._id}`}><button className="btn bg-green-400">Payment</button></Link>
                 </td>
               </tr>)
             }

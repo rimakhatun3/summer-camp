@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Provider/AuthProvider';
 import useAxiosSecure from '../../Components/hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
+import useEnrolClass from '../../Components/useEnrollClasse';
 
 const AddAClasses = () => {
+    
     const {user} = useContext(AuthContext)
     const [axiosSecure] = useAxiosSecure()
     const { register, handleSubmit,reset,  formState: { errors } } = useForm();
@@ -16,7 +18,8 @@ const AddAClasses = () => {
        formData.append('image',data.image[0])
        fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imgbb_api}`,{
         method:"POST",
-        body:formData
+        body:formData,
+        
        })
        .then(res=>res.json())
        .then(imgres=>{

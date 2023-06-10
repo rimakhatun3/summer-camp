@@ -4,7 +4,8 @@ import useAxiosSecure from '../../Components/hooks/UseAxiosSecure';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
-const CheckOutForm = ({price}) => {
+const CheckOutForm = ({price,data}) => {
+    console.log(price,data)
     const {user} = useContext(AuthContext)
    const [axiosSecure] = useAxiosSecure()
     const stripe = useStripe();
@@ -12,6 +13,7 @@ const CheckOutForm = ({price}) => {
 const [cardError,setCardError] = useState('')
 const [clientSecret,setClientSecret] = useState('')
 const [transitionId,setTransitionId] = useState('')
+const [processing,setProcessing] = useState(false)
 
 useEffect(()=>{
     axiosSecure.post('/create-payment-intent',{price})
@@ -48,7 +50,7 @@ useEffect(()=>{
             setCardError('')
             console.log('[PaymentMethod]', paymentMethod);
           }
-
+          setProcessing(true)
           const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -61,23 +63,24 @@ useEffect(()=>{
               },
             },
           );
+          
           if(confirmError){
             setCardError(confirmError.message)
             
           }
         
 
-
+         
           console.log('paymentInten',paymentIntent)
-//   setProcessing(false)
+  setProcessing(false)
   if(paymentIntent.status=="succeeded"){
 setTransitionId(paymentIntent.id)
-  }
-
-  const payment ={
+const payment ={
     transationId :paymentIntent.id,
     email:user?.email,
     price,
+    classId : data._id,
+    className: data.className,
     date:new Date(),
   
   }
@@ -87,7 +90,7 @@ setTransitionId(paymentIntent.id)
   console.log(res.data)
   
 
-  if(res.data.insertedId){
+  if(res.data.result.insertedId){
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -98,6 +101,9 @@ setTransitionId(paymentIntent.id)
   }
 })
 
+  }
+
+ 
     }
     
     return (
