@@ -41,7 +41,7 @@ updateUser(data.name,imageUrl)
         showConfirmButton: false,
         timer: 1500
       })
-      const saveUser = {name:data.name,email:data.email,role:"student"}
+      const saveUser = {name:data.name,email:data.email,role:"student",image:imageUrl}
       fetch(`http://localhost:5000/allUser/${result.user.email}`,{
         method:'PUT',
         headers:{

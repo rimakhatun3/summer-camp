@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import img1 from '../../assets/images/ins.avif'
+import InstructorCard from './InstructorCard';
 
 const Instractors = () => {
+    const [instructor,setInstructor] = useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/allusers')
+        .then(res=>res.json())
+        .then(data=>{
+            const instructor = data.filter(instructor=>instructor.role==="instructor")
+           setInstructor(instructor)
+        })
+    },[])
     return (
-        <div>
-            <h2>this is a instructor pages</h2>
+        <div >
+            
+            <img className='w-full opacity-75 mt-14' src={img1} alt="" />
+            <h2 className='text-2xl font-extrabold text-center my-5'>Top 6 Instructor</h2>
+            <div className='grid grid-cols-2 gap-5 mt-10'>
+            {instructor.map(instructor=><InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)}
+               
+            </div>
         </div>
     );
 };

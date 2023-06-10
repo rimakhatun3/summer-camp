@@ -81,8 +81,9 @@ const payment ={
     price,
     classId : data._id,
     className: data.className,
+    seat:data.seat,
     date:new Date(),
-  
+
   }
 
   axiosSecure.post('/payment',payment)

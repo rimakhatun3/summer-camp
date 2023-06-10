@@ -11,11 +11,6 @@ const AllClasses = () => {
     const [axiosSecure] = useAxiosSecure()
 
     const filterClass = classes.filter(item=>item.status==="approve")
-
-    
-    const [enrollClass] = useEnrolClass()
-   console.log(enrollClass)
-    
   
 const handleSelectedClass =(selectedClass)=>{
     console.log(selectedClass)

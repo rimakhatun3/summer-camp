@@ -1,7 +1,14 @@
 import React from 'react';
+import useEnrolClass from '../../Components/useEnrollClasse';
 
 const ClassCard = ({singleClass,handleSelectedClass}) => {
-    const {image,className,instructorname,price,seat} = singleClass
+  const [enrollClass] = useEnrolClass()
+
+   console.log(enrollClass)
+    const {image,className,instructorname,price,seat,_id} = singleClass
+    const filter = enrollClass.filter(item=>item.classId==_id)
+    console.log(filter)
+    
     
     return (
         <div>
