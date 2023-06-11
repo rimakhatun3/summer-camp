@@ -9,13 +9,14 @@ const Instractors = () => {
         .then(res=>res.json())
         .then(data=>{
             const instructor = data.filter(instructor=>instructor.role==="instructor")
+            console.log(instructor)
            setInstructor(instructor)
         })
     },[])
     return (
         <div >
             
-            <img className='w-full opacity-75 mt-14' src={img1} alt="" />
+            <img className='w-full opacity-75' src={img1} alt="" />
             <h2 className='text-2xl font-extrabold text-center my-5'>Top 6 Instructor</h2>
             <div className='grid grid-cols-2 gap-5 mt-10'>
             {instructor.map(instructor=><InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)}

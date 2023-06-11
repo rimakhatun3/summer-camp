@@ -6,12 +6,13 @@ const InstructorCard = ({instructor}) => {
     return (
         <div>
             <div className="card w-full bg-base-100 shadow-xl">
-  <figure><img src={user?.photoURL} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">
+  <figure><img className='h-80' src={instructor.image} alt="Shoes" /></figure>
+  <div className="card-body text-center ">
+    <h2 className=" text-center">
      {instructor.name}
-      <div className="badge badge-secondary">{instructor.email}</div>
+      
     </h2>
+    <p>{instructor.email}</p>
     
   </div>
 </div>

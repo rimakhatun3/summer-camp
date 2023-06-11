@@ -19,6 +19,7 @@ const AddAClasses = () => {
        fetch(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imgbb_api}`,{
         method:"POST",
         body:formData,
+       
         
        })
        .then(res=>res.json())
@@ -50,7 +51,8 @@ if(imgres.success){
 
     }
     return (
-        <div className='bg-red-100 py-10 px-8'>
+        <div className='bg-red-100 py-8 px-14 mt-10'>
+            <h2 className='text-2xl font-bold text-center my-5'>Add Your Class</h2>
             <form  onSubmit={handleSubmit(onSubmit)}>
            
             
