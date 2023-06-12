@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
   const [enrollClass] = useEnrolClass()
+  console.log(enrollClass)
   console.log(enrollClass.length)
 
     const [classes,refetch] = useClass()
@@ -44,7 +45,8 @@ const MyClasses = () => {
              {enrollClass.length}
             </td> */}
             <td>
-            {singleClass.feedback?singleClass.feedback:'no feedback'}
+            {singleClass.feedback?.text?singleClass.feedback?.text:'no feedback'}
+            {console.log(singleClass)}
             
             </td>
             <th>

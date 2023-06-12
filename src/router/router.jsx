@@ -82,7 +82,9 @@ children:[
     },
     {
         path:'feedback/:id',
-        element:<FeedBack></FeedBack>
+        element:<FeedBack></FeedBack>,
+        loader:({params})=>fetch(`https://b7a12-server.vercel.app/feedbackclass/${params.id}`)
+        
     },
     {
         path:'paymenthistory',

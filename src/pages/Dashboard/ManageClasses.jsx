@@ -121,7 +121,7 @@ const handleStatusDeny =(id)=>{
       
     </th>
     <th>
-        <Link id={singleClass._id} to='/dashboard/feedback/${singleClass._id}'><button className="btn bg-pink-600">Feedback</button></Link>
+        <Link  to={`/dashboard/feedback/${singleClass._id}`}><button className="btn bg-pink-600">Feedback</button></Link>
     </th>
   </tr>)
 }

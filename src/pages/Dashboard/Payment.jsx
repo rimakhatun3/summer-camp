@@ -8,7 +8,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 const Payment = () => {
     const {id} = useParams()
     const data = useLoaderData()
-    // console.log(data)
+    console.log(data,id)
     const price = data.price
    
 //  
