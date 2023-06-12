@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import img1 from '../../assets/images/ins.avif'
 import InstructorCard from './InstructorCard';
+import { Slide } from 'react-awesome-reveal';
 
 const Instractors = () => {
     const [instructor,setInstructor] = useState([])
@@ -15,8 +16,8 @@ const Instractors = () => {
     },[])
     return (
         <div >
+            <Slide><img className='w-full opacity-75' src={img1} alt="" /></Slide>
             
-            <img className='w-full opacity-75' src={img1} alt="" />
             <h2 className='text-2xl font-extrabold text-center my-5'>Top 6 Instructor</h2>
             <div className='grid grid-cols-2 gap-5 mt-10'>
             {instructor.map(instructor=><InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)}
