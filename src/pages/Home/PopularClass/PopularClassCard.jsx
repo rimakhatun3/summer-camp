@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +8,10 @@ const PopularClassCard = ({popular}) => {
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl image-full">
-  <figure><img src={image} alt="Shoes" /></figure>
+            <Fade delay={1e3} shake damping={1e-1}>
+            <figure><img src={image} alt="Shoes" /></figure>
+      </Fade>
+            
   <div className="card-body">
     <h2 className="card-title">{className}</h2>
     <p><span className='text-xl font-bold'>Price</span>{price}</p>
