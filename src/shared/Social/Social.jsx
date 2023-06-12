@@ -13,7 +13,7 @@ signInGoggle()
 .then(result=>{
     console.log(result.user)
     const saveUser = {name:result.user.displayName,email:result.user.email}
-    fetch(`http://localhost:5000/allUser/${result.user.email}`,{
+    fetch(`https://b7a12-server.vercel.app/allUser/${result.user.email}`,{
       method:'PUT',
       headers:{
           'content-type':'application/json'

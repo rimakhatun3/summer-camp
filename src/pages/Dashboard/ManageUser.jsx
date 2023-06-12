@@ -8,7 +8,7 @@ const ManageUser = () => {
 const {data :users=[],refetch} =useQuery({
     queryKey:['user'],
     queryFn:async ()=>{
-        const res = await axios.get('http://localhost:5000/allusers')
+        const res = await axios.get('https://b7a12-server.vercel.app/allusers')
         return res.data
     }
     
@@ -17,7 +17,7 @@ const {data :users=[],refetch} =useQuery({
 
 const handleMakeAdmin = (user)=>{
   console.log(user)
-  fetch(`http://localhost:5000/alluser/admin/${user._id}`,{
+  fetch(`https://b7a12-server.vercel.app/alluser/admin/${user._id}`,{
     method:'PATCH',
     
   })
@@ -37,7 +37,7 @@ const handleMakeAdmin = (user)=>{
 }
 const handleMakeInstructor = (user)=>{
   console.log(user)
-  fetch(`http://localhost:5000/alluser/instructor/${user._id}`,{
+  fetch(`https://b7a12-server.vercel.app/alluser/instructor/${user._id}`,{
     method:'PATCH',
     
   })

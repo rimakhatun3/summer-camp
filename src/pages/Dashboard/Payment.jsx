@@ -8,13 +8,10 @@ import { useLoaderData, useParams } from 'react-router-dom';
 const Payment = () => {
     const {id} = useParams()
     const data = useLoaderData()
-    console.log(data)
+    // console.log(data)
     const price = data.price
    
-//     const [classes] = useClass()
-//     const selectedClass = classes.filter(selectClass=>selectClass.status==="approve")
-//     const filterPrice = selectedClass?.find(price=>price.price)
-//    const price = filterPrice?.price
+//  
 
    
     const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PAYMENT_KEY);

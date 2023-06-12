@@ -7,6 +7,7 @@ import { FaHome, FaIdCard, FaSchool } from 'react-icons/fa';
 
 
 const Dashboard = () => {
+  const {user} = useContext(AuthContext)
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor()
     
@@ -21,9 +22,15 @@ const Dashboard = () => {
   
   </div> 
   <div className="drawer-side">
+    
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 h-full bg-rose-300 text-base-content">
-      {/* Sidebar content here */}
+    <ul className="menu  p-4 w-80 h-full bg-rose-400 text-base-content">
+   {/* <div className='my-6 mx-auto'>
+   <div className="tooltip" data-tip={user?.displayName}>
+   <img className='w-20 rounded-full my-2' src={user?.photoURL} alt="" />
+   </div>
+    <h2>{user?.email}</h2>
+   </div> */}
 
      
       {

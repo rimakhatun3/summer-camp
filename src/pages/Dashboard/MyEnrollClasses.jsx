@@ -5,6 +5,7 @@ import useEnrolClass from '../../Components/useEnrollClasse';
 
 const MyEnrollClasses = () => {
 const [enrollClass] = useEnrolClass()
+console.log(enrollClass)
 
     // const [axiosSecure] = useAxiosSecure()
     // const {data:selectedClass=[],refetch} = useQuery({

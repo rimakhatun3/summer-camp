@@ -41,7 +41,7 @@ useEffect(()=>{
         setUser(currentUser)
 
         if(currentUser){
-            axios.post('http://localhost:5000/jwt',{
+            axios.post('https://b7a12-server.vercel.app/jwt',{
             email:currentUser.email
         })
         .then(data=>{

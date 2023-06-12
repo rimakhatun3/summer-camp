@@ -31,7 +31,7 @@ const MySelectedClasses = () => {
 
 const handleClassRemove =(id)=>{
 
-    fetch(`http://localhost:5000/selectedclass/${id}`,{
+    fetch(`https://b7a12-server.vercel.app/selectedclass/${id}`,{
         method:'DELETE'
     })
     .then(res=>res.json())

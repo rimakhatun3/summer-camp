@@ -4,7 +4,7 @@ import InstructorCard from '../../Instructors/InstructorCard';
 const PopularInstructor = () => {
     const [instructor,setInstructor] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allusers')
+        fetch('https://b7a12-server.vercel.app/allusers')
         .then(res=>res.json())
         .then(data=>{
             const instructor = data.filter(instructor=>instructor.role==="instructor")

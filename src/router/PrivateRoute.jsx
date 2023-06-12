@@ -11,12 +11,13 @@ const location = useLocation()
         return <span className="loading loading-spinner text-secondary"></span>
     }
     if(!user){
-        alert('You have to log in first to view details')
+        alert('You have to log in first ')
     }
     else{
         return children
     }
-    return <Navigate to='/login' state={{from:location}} replace ></Navigate>
+
+    return <Navigate to='/login' state={{from:location}} replace></Navigate>
 };
 
 export default PrivateRoute;

@@ -1,6 +1,7 @@
 import React from 'react';
 import useClass from '../../Components/hooks/useClasse';
 import useEnrolClass from '../../Components/useEnrollClasse';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
   const [enrollClass] = useEnrolClass()
@@ -42,7 +43,10 @@ const MyClasses = () => {
             {/* <td className='text-center'>
              {enrollClass.length}
             </td> */}
-            <td><button className="btn bg-green-500">FeedBack</button></td>
+            <td>
+            {singleClass.feedback?singleClass.feedback:'no feedback'}
+            
+            </td>
             <th>
               <button className="btn bg-pink-600">Update</button>
             </th>

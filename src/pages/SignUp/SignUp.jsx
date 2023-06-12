@@ -42,7 +42,7 @@ updateUser(data.name,imageUrl)
         timer: 1500
       })
       const saveUser = {name:data.name,email:data.email,role:"student",image:imageUrl}
-      fetch(`http://localhost:5000/allUser/${result.user.email}`,{
+      fetch(`https://b7a12-server.vercel.app/allUser/${result.user.email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
@@ -82,8 +82,10 @@ updateUser(data.name,imageUrl)
            <form  onSubmit={handleSubmit(onSubmit)}>
            <p className='text-black my-2 ms-4'>Your Name</p>
             <input type="text" placeholder="Your Name" {...register("name", { required: true })} className="input input-bordered mb-4  w-full bg-slate-600"  />
+            {errors.name?.type === 'required' && <p className='text-red-600' role="alert"> name is required</p>}
             <p className='text-black mb-2 ms-4'>Your Photo</p>
             <input type="file" placeholder="Your Photo" {...register("image", { required: true })} className="input input-bordered pt-2 mb-4 w-full bg-slate-600"  />
+            {errors.image?.type === 'required' && <p className='text-red-600' role="alert">image url is required</p>}
             <p className='text-black mb-2 ms-4'>Your Email</p>
             <input type="text" placeholder="Your Email" {...register("email", { required: true })} className="input input-bordered  mb-4 w-full bg-slate-600"  />
             <p className='text-black mb-2 ms-4'>Your Password</p>

@@ -17,11 +17,13 @@ import AddAClasses from "../pages/Dashboard/AddAClasses";
 import MyClasses from "../pages/Dashboard/MyClasses";
 import FeedBack from "../pages/Dashboard/FeedBack";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory";
+import Errorpage from "../shared/Errorpage";
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Errorpage></Errorpage>,
         children:[
             {
                 path:'/',
@@ -29,11 +31,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/instructor',
-                element:<Instractors></Instractors>
+                element:<PrivateRoute><Instractors></Instractors></PrivateRoute>
             },
             {
                 path:'/allclasses',
-                element:<AllClasses></AllClasses>
+                element:<PrivateRoute><AllClasses></AllClasses></PrivateRoute>
             },
         ]
     },
@@ -47,7 +49,7 @@ const router = createBrowserRouter([
     },
     {
         path:'dashboard',
-element:<Dashboard></Dashboard>,
+element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
 children:[
     {
         path:'myselectedclasses',
@@ -60,7 +62,7 @@ children:[
     {
         path:'mypayment/:id',
         element:<Payment></Payment>,
-        loader:({params})=> fetch(`http://localhost:5000/allclasse/${params.id}`)
+        loader:({params})=> fetch(`https://b7a12-server.vercel.app/allclasse/${params.id}`)
     },
     {
         path:'manageuser',
@@ -79,7 +81,7 @@ children:[
         element:<MyClasses></MyClasses>
     },
     {
-        path:'feedback',
+        path:'feedback/:id',
         element:<FeedBack></FeedBack>
     },
     {

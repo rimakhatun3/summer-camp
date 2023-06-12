@@ -19,7 +19,7 @@ return res.data
 
 const handleStatusApprove =(id)=>{
     console.log(id)
-    fetch(`http://localhost:5000/allclass/${id}`,{
+    fetch(`https://b7a12-server.vercel.app/allclass/${id}`,{
     method:'PATCH',
     
   })
@@ -39,7 +39,7 @@ const handleStatusApprove =(id)=>{
 }
 const handleStatusDeny =(id)=>{
     console.log(id)
-    fetch(`http://localhost:5000/classdeny/${id}`,{
+    fetch(`https://b7a12-server.vercel.app/classdeny/${id}`,{
     method:'PATCH',
     
   })
@@ -121,7 +121,7 @@ const handleStatusDeny =(id)=>{
       
     </th>
     <th>
-        <Link to='/dashboard/feedback'><button className="btn bg-pink-600">Update</button></Link>
+        <Link id={singleClass._id} to='/dashboard/feedback/${singleClass._id}'><button className="btn bg-pink-600">Feedback</button></Link>
     </th>
   </tr>)
 }

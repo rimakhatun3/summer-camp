@@ -18,7 +18,7 @@ const handleSelectedClass =(selectedClass)=>{
     const  selected = {instructorEmail,instructorname,className,price} 
     console.log(selected)
 
- fetch('http://localhost:5000/selectedclass',{
+ fetch('https://b7a12-server.vercel.app/selectedclasses',{
     method:"POST",
     headers:{
         "content-type":"application/json"

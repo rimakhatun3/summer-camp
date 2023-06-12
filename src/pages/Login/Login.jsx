@@ -9,7 +9,8 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location?.state?.from.pathname || '/'
+    const from =location?.state?.from?.pathname  || '/';
+    
 
     const {signIn} = useContext(AuthContext)
 
@@ -18,6 +19,7 @@ const Login = () => {
       signIn(data.email,data.password)
       .then(result=>{
         console.log(result.user)
+        
         
     Swal.fire({
         position: 'top-end',
@@ -28,7 +30,7 @@ const Login = () => {
       })
       navigate(from,{replace:true})
       const saveUser = {name:data.name,email:data.email}
-      fetch(`http://localhost:5000/allUser/${result.user.email}`,{
+      fetch(`https://b7a12-server.vercel.app/allUser/${result.user.email}`,{
         method:'PUT',
         headers:{
             'content-type':'application/json'
