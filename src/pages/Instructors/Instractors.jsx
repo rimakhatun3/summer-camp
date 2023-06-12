@@ -19,7 +19,7 @@ const Instractors = () => {
             <Slide><img className='w-full opacity-75' src={img1} alt="" /></Slide>
             
             <h2 className='text-2xl font-extrabold text-center my-5'>Top 6 Instructor</h2>
-            <div className='grid grid-cols-2 gap-5 mt-10'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
             {instructor.map(instructor=><InstructorCard key={instructor._id} instructor={instructor}></InstructorCard>)}
                
             </div>

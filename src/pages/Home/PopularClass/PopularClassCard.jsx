@@ -7,7 +7,7 @@ const PopularClassCard = ({popular}) => {
     const {image,className,price} = popular
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl image-full">
+            <div className="card  bg-base-100 shadow-xl image-full">
             <Fade delay={1e3} shake damping={1e-1}>
             <figure><img src={image} alt="Shoes" /></figure>
       </Fade>
