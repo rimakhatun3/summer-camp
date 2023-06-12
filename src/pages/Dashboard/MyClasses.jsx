@@ -41,9 +41,9 @@ const MyClasses = () => {
             <td>
              {singleClass.status}
             </td>
-            {/* <td className='text-center'>
+            <td className='text-center'>
              {enrollClass.length}
-            </td> */}
+            </td>
             <td>
             {singleClass.feedback?.text?singleClass.feedback?.text:'no feedback'}
             {console.log(singleClass)}
