@@ -25,7 +25,7 @@ const MyClasses = () => {
          #
         </th>
         <th>status</th>
-        {/* <th>Total enroll students</th> */}
+        <th>Total enroll students</th>
         <th>FeedBack</th>
         <th>Update</th>
       </tr>

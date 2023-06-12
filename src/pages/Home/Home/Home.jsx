@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import AboutUs from '../AboutUs/AboutUs';
 import PopularClass from '../PopularClass/PopularClass';
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
+import Leadr from '../Leadr';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <AboutUs></AboutUs>
             <PopularClass></PopularClass>
             <PopularInstructor></PopularInstructor>
+            <Leadr></Leadr>
         </div>
     );
 };

@@ -14,8 +14,8 @@ const AllClasses = () => {
   
 const handleSelectedClass =(selectedClass)=>{
     console.log(selectedClass)
-    const {className,instructorname,instructorEmail,price} = selectedClass
-    const  selected = {instructorEmail,instructorname,className,price} 
+    const {className,instructorname,instructorEmail,price,seat} = selectedClass
+    const  selected = {instructorEmail,instructorname,className,price,seat} 
     console.log(selected)
 
  fetch('https://b7a12-server.vercel.app/selectedclasses',{

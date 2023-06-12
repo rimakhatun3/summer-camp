@@ -54,7 +54,7 @@ const Header = () => {
             </ul>
           </div>
           <div className='flex flex-col justify-center items-center'>
-          <img src={logo} alt="Website Logo" class="h-8 w-10 mr-2"/>
+          <img src={logo} alt="Website Logo" className="h-8 w-10 mr-2"/>
           <a className="btn btn-ghost normal-case text-xl">Sport Camp</a>
           
           </div>

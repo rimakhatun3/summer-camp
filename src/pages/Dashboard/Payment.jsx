@@ -6,9 +6,9 @@ import useClass from '../../Components/hooks/useClasse';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const Payment = () => {
-    const {id} = useParams()
+    
     const data = useLoaderData()
-    console.log(data,id)
+    console.log(data)
     const price = data.price
    
 //  
