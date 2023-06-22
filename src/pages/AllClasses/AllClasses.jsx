@@ -1,7 +1,7 @@
 import React from 'react';
 import useClass from '../../Components/hooks/useClasse';
 import useAxiosSecure from '../../Components/hooks/UseAxiosSecure';
-import { useQuery } from '@tanstack/react-query';
+
 import Swal from 'sweetalert2';
 import ClassCard from '../Dashboard/ClassCard';
 import useEnrolClass from '../../Components/useEnrollClasse';

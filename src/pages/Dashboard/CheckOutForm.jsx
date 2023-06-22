@@ -48,7 +48,7 @@ useEffect(()=>{
             setCardError(error.message)
           } else {
             setCardError('')
-            console.log('[PaymentMethod]', paymentMethod);
+            // console.log('[PaymentMethod]', paymentMethod);
           }
           setProcessing(true)
           const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
@@ -71,7 +71,7 @@ useEffect(()=>{
         
 
          
-          console.log('paymentInten',paymentIntent)
+          // console.log('paymentInten',paymentIntent)
   setProcessing(false)
   if(paymentIntent.status=="succeeded"){
 setTransitionId(paymentIntent.id)
@@ -89,6 +89,14 @@ const payment ={
   axiosSecure.post('/payment',payment)
 .then(res=>{
   console.log(res.data)
+const seat = data.seat
+const enroll = data.enroll
+  axiosSecure.patch(`http://localhost:5000/enrollseat/${data._id}`,{
+    seat:seat-1,enroll:enroll+1
+  })
+  .then(res=>{
+    console.log(res.data)
+  })
   
 
   if(res.data.result.insertedId){

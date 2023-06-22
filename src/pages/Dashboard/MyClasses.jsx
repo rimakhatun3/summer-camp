@@ -25,7 +25,7 @@ const MyClasses = () => {
          #
         </th>
         <th>status</th>
-        <th>Total enroll students</th>
+        <th>Enroll students</th>
         <th>FeedBack</th>
         <th>Update</th>
       </tr>
@@ -42,7 +42,7 @@ const MyClasses = () => {
              {singleClass.status}
             </td>
             <td className='text-center'>
-             {enrollClass.length}
+             {singleClass.enroll}
             </td>
             <td>
             {singleClass.feedback?.text?singleClass.feedback?.text:'no feedback'}
